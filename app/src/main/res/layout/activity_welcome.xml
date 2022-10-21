@@ -4,19 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple_200"
     tools:context="uott.seg.mealerproject.activities.WelcomeActivity">
 
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="299dp"
-        android:layout_height="78dp"
+        android:layout_height="100dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="156dp"
-        android:text="Welcome! You are logged in as"
+        android:background="@color/material_dynamic_neutral90"
+        android:text="Welcome to the Mealer app!    You are logged in as: "
         android:textColor="@color/design_default_color_secondary"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="346dp"
+        android:layout_height="284dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
+        tools:srcCompat="@drawable/pic"></ImageView>
 
     <Button
         android:id="@+id/btnLogout"
