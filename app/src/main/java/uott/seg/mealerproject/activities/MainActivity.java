@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        db.createAdmin();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
