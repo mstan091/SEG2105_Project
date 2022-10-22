@@ -51,6 +51,28 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         //3rd argument to be passed is CursorFactory instance
     }
 
+    //Create admin
+    public void createAdmin() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String CREATE_USER_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_USER + "("
+                + EMAIL + " TEXT PRIMARY KEY," + PWD + " TEXT," + FNAME + " TEXT," + LNAME + " TEXT,"
+                + ADDR + " TEXT," + USER_TYPE + " TINYINT," + INS_DATE + " DATE" + ")";
+
+        db.execSQL(CREATE_USER_TABLE);
+        // Create Admin account
+        ContentValues adminValues = new ContentValues();
+        adminValues.put(EMAIL, "admin@gmail.com");
+        adminValues.put(PWD, "admin");
+
+        adminValues.put(FNAME, "John");
+        adminValues.put(LNAME, "Smith");
+        adminValues.put(ADDR, "1200 Albert Street, Ottawa, ON, K1N 3P2");
+        adminValues.put(USER_TYPE, "3");
+        adminValues.put(INS_DATE, getDateTime() );
+
+        db.insert(TABLE_USER, null, adminValues);
+    }
+
     // Creating Tables
     @Override
     public void onCreate(SQLiteDatabase db) {
