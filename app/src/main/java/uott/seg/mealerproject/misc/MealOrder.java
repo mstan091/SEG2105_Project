@@ -3,7 +3,7 @@ package uott.seg.mealerproject.misc;
 import java.util.Date;
 
 import uott.seg.mealerproject.enums.EnumOrderStatus;
-import uott.seg.mealerproject.users.MealerUserClinet;
+import uott.seg.mealerproject.users.MealerUserClient;
 
 public class MealOrder {
 
@@ -13,7 +13,7 @@ public class MealOrder {
     private Date pickupTime;
     private EnumOrderStatus status;
 
-    private MealerUserClinet client;
+    private MealerUserClient client;
     private int rate;
     private String complaintMsg;
 

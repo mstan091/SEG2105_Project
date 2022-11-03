@@ -11,7 +11,7 @@ import android.widget.Toast;
 import uott.seg.mealerproject.R;
 import uott.seg.mealerproject.enums.EnumUserType;
 import uott.seg.mealerproject.misc.CreditCardInfo;
-import uott.seg.mealerproject.users.MealerUserClinet;
+import uott.seg.mealerproject.users.MealerUserClient;
 
 
 public class RegisterClientActivity extends  RegisterActivity {
@@ -48,7 +48,7 @@ public class RegisterClientActivity extends  RegisterActivity {
                 CreditCardInfo cardInfo = validateCardInfo();
 
 
-                if (isUserExist(email)) {
+                if (db.isUserExist(email)) {
                     teEmail.setError("User account exist");
                     return;
                 }
@@ -56,7 +56,7 @@ public class RegisterClientActivity extends  RegisterActivity {
                 Log.d("4", "validated email");
 
                 if (isValid) {
-                    MealerUserClinet client = new MealerUserClinet(fName, lName, email, pwd, addr);
+                    MealerUserClient client = new MealerUserClient(fName, lName, email, pwd, addr);
                     client.setUserType(userType);
                     client.setCardInfo(cardInfo);
 
@@ -66,6 +66,9 @@ public class RegisterClientActivity extends  RegisterActivity {
 
                     // After register, redirect user back to login activity
                     Intent intent = new Intent(view.getContext(), MainActivity.class);
+                    // MS
+                    intent.putExtra("fromLogout", true);
+                    // End MS
                     view.getContext().startActivity(intent);
 
                     Toast.makeText(RegisterClientActivity.this, "Account registered. Please login", Toast.LENGTH_SHORT).show();
@@ -86,15 +89,7 @@ public class RegisterClientActivity extends  RegisterActivity {
 
         return false;
     }
-
-
-
-    private boolean isUserExist(String email) {
-        // ToDo
-
-        return false;
-    }
-
+    
     private CreditCardInfo validateCardInfo() {
         String holderName, cardNum, expireDate, secCode;
         CreditCardInfo cardInfo;

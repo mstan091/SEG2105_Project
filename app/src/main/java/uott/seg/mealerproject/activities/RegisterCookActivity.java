@@ -91,6 +91,9 @@ public class RegisterCookActivity extends  RegisterActivity {
 
                     // After register, redirect user back to login activity
                     Intent intent = new Intent(view.getContext(), MainActivity.class);
+                    // MS
+                    intent.putExtra("fromLogout", true);
+                    // End MS
                     view.getContext().startActivity(intent);
 
                     Toast.makeText(RegisterCookActivity.this, "Account registered. Please login", Toast.LENGTH_SHORT).show();

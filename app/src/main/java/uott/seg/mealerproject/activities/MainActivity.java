@@ -4,6 +4,7 @@ import static android.view.View.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,8 +19,14 @@ import android.widget.Toast;
 
 import uott.seg.mealerproject.R;
 import uott.seg.mealerproject.db.DatabaseHandler;
+import uott.seg.mealerproject.enums.EnumCookStatus;
 import uott.seg.mealerproject.enums.EnumLoginStatus;
 import uott.seg.mealerproject.enums.EnumUserType;
+import uott.seg.mealerproject.misc.CreditCardInfo;
+import uott.seg.mealerproject.misc.UserComplaint;
+import uott.seg.mealerproject.users.MealerUserAdmin;
+import uott.seg.mealerproject.users.MealerUserClient;
+import uott.seg.mealerproject.users.MealerUserCook;
 
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
@@ -67,9 +74,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        db.createAdmin();
+        //db.createAdmin();
+        //db.createTestData();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Insert user complaint into DB
+        Log.d("Database", "Load DB for testing");
+        loadDBForTesting();
 
         edLoginID = (EditText) findViewById(R.id.teLoginEmail);
 
@@ -86,17 +98,21 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         btnLogin.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 EnumLoginStatus loginStatus = validateLogin(userType);
-                EditText pass = findViewById(R.id.teLoginPwd);
-                String password = pass.getText().toString();
-
-                if (password.isEmpty()) {
-                    pass.setError("Please enter your first name");
-                }
-
 
                 if (loginStatus == EnumLoginStatus.SUCCESS ) {
                     Log.d("login", "Login successful");
-                    Intent intent = new Intent(view.getContext(), WelcomeActivity.class);
+                    Intent intent;
+
+                    if (userType == EnumUserType.Admin) {
+                        intent = new Intent(view.getContext(), WelcomeAdminActivity.class);
+                    } else if (userType == EnumUserType.Client)   {
+                        intent = new Intent(view.getContext(), WelcomeClientActivity.class);
+                    } else if (userType == EnumUserType.Cook) {
+                        intent = new Intent(view.getContext(), WelcomeCookActivity.class);
+                    } else {
+                        return;
+                    }
+
                     intent.putExtra("UserID", edLoginID.getText().toString());
                     intent.putExtra("LoginType", userType);
                     view.getContext().startActivity(intent);
@@ -174,4 +190,76 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
         }
     }
+
+    private void insertUserComplaint() {
+        UserComplaint compl1 = new UserComplaint("cook1@mealer.com", "client1@mealer.com", "not a very good taste");
+        db.addUserComplaints(compl1);
+
+        UserComplaint compl2 = new UserComplaint("cook2@mealer.com", "client1@mealer.com","not ready on time");
+        db.addUserComplaints((compl2));
+
+        UserComplaint compl3 = new UserComplaint("cook2@mealer.com", "client2@mealer.com","bad food");
+        db.addUserComplaints((compl3));
+    }
+
+    private void insertCook() {
+        MealerUserCook cook1 = new MealerUserCook("Cook1", "Mealer", "cook1@mealer.com", "cook1", "1 cook street mealer city");
+        cook1.setCookDescription("Cook1 at mealer city and cooks meal");
+        cook1.setLoginStatus(EnumLoginStatus.NOT_LONGIN);
+
+
+        MealerUserCook cook2 = new MealerUserCook("Cook2", "Mealer", "cook2@mealer.com", "cook2", "2 cook street mealer city");
+        cook2.setCookDescription("Cook2 at mealer city and cooks meal");
+        cook2.setLoginStatus(EnumLoginStatus.NOT_LONGIN);
+
+        MealerUserCook cook3 = new MealerUserCook("Cook3", "Mealer", "cook3@mealer.com", "cook3", "3 cook street mealer city");
+        cook3.setCookDescription("Cook3 at mealer city and cooks meal");
+        cook3.setLoginStatus(EnumLoginStatus.NOT_LONGIN);
+
+        db.addCook(cook1);
+        db.addCook(cook2);
+        db.addCook(cook3);
+        //db.setCookStatus(cook3.getEmail(), EnumCookStatus.SUSPENDED);
+    }
+
+    private void addClientCardInfo (MealerUserClient client) {
+        CreditCardInfo cardInfo = new CreditCardInfo(client.getfName() , "1111 0000", "01/22", "001");
+    }
+
+    private void insertClient() {
+        MealerUserClient client1 = new MealerUserClient("Client1", "Mealer", "client1@mealer.com", "client1", "1 client street mealer city");
+        client1.setCardInfo(new CreditCardInfo("Client1" , "1111 0000", "01/22", "001"));
+
+        MealerUserClient client2 = new MealerUserClient("Client2", "Mealer", "client2@mealer.com", "client2", "2 client street mealer city");
+        client2.setCardInfo(new CreditCardInfo("Client2" , "2222 0000", "02/22", "002"));
+
+        db.addClient(client1);
+        db.addClient(client2);
+
+    }
+
+    private void insertAdmin() {
+        MealerUserAdmin adminUser = new MealerUserAdmin("Admin", "Mealer", "admin@gmail.com", "admin", "1 admin street mealer city");
+        db.addAdmin(adminUser);
+
+    }
+
+    private void loadDBForTesting() {
+        // MS
+        Intent intent = getIntent();
+        boolean fromLogout = intent.getBooleanExtra("fromLogout", false);
+        Log.e("the value passed", String.valueOf(fromLogout));
+        // end MS
+        if (!fromLogout) {
+            db.removeAdmin();
+            db.removeAllComplaints();
+            db.removeAllCooks();
+            db.removeAllClients();
+            insertAdmin();
+            insertCook();
+            insertClient();
+            insertUserComplaint();
+        }
+    }
+
 }
