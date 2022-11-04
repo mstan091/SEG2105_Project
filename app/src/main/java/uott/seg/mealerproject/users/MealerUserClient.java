@@ -1,0 +1,51 @@
+package uott.seg.mealerproject.users;
+
+import java.util.List;
+
+import uott.seg.mealerproject.enums.EnumRegisterStatus;
+import uott.seg.mealerproject.enums.EnumUserType;
+import uott.seg.mealerproject.misc.CreditCardInfo;
+import uott.seg.mealerproject.misc.Meal;
+import uott.seg.mealerproject.misc.MealOrder;
+
+public class MealerUserClient extends  MealerUser{
+
+
+
+    private CreditCardInfo cardInfo;
+
+
+    private List<MealOrder> currentOrder;
+    private List<MealOrder> historyOrder;
+
+    public MealerUserClient(String fName, String lName, String email, String pwd, String addr) {
+        super(fName, lName, email, pwd, addr);
+        super.setUserType(EnumUserType.Client);
+    }
+
+    @Override
+    public EnumRegisterStatus register() {
+        EnumRegisterStatus regStatus = EnumRegisterStatus.SUCCESS;
+
+        return regStatus;
+    }
+
+    public void rateOrder(MealOrder order, float rate) {
+        Meal meal = order.getMeal();
+        meal.setRating(rate);
+    }
+
+    public void complaint(MealOrder order, String msg) {
+        order.setComplaintMsg(msg);
+    }
+
+
+    public CreditCardInfo getCardInfo() {
+        return cardInfo;
+    }
+
+    public void setCardInfo(CreditCardInfo cardInfo) {
+        this.cardInfo = cardInfo;
+    }
+
+}

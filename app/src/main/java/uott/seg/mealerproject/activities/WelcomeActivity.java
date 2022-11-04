@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import uott.seg.mealerproject.R;
+import uott.seg.mealerproject.db.DatabaseHandler;
 import uott.seg.mealerproject.enums.EnumLoginStatus;
 import uott.seg.mealerproject.enums.EnumUserType;
 
@@ -20,8 +21,10 @@ public class WelcomeActivity extends AppCompatActivity {
 
     TextView tvWelcome;
     EnumUserType userType;
-
+    String userID;
     String welcomeMsg;
+
+    protected DatabaseHandler db = new DatabaseHandler(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +33,19 @@ public class WelcomeActivity extends AppCompatActivity {
 
         tvWelcome = (TextView) findViewById(R.id.tvWelcome);
         userType = (EnumUserType) getIntent().getExtras().get("LoginType");
+        userID = (String) getIntent().getExtras().get("UserID");
+
+
+        Log.d("logintype", userType.toString());
+
         welcomeMsg = getString(R.string.welcome_msg, userType.toString());
+
+        Log.d("login ********************", welcomeMsg);
+
         tvWelcome.setText(welcomeMsg);
 
-        Button btnLogin = (Button) findViewById(R.id.btnLogout);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        Button btnLogout = (Button) findViewById(R.id.btnLogout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), MainActivity.class);
                 view.getContext().startActivity(intent);

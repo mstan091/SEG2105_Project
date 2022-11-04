@@ -15,6 +15,7 @@ public abstract class MealerUser {
     private String Addr;
 
     private EnumUserType userType;
+    private EnumLoginStatus loginStatus;
 
     public MealerUser(String fName, String lName, String email, String pwd, String addr) {
         this.fName = fName;
@@ -84,13 +85,19 @@ public abstract class MealerUser {
         this.userType = userType;
     }
 
+    public EnumLoginStatus getLoginStatus() {
+        return loginStatus;
+    }
 
+    public void setLoginStatus(EnumLoginStatus loginStatus) {
+        this.loginStatus = loginStatus;
+    }
 
-    public EnumLoginStatus login() {
+/*    public EnumLoginStatus login() {
         EnumLoginStatus loginStatus = EnumLoginStatus.SUCCESS;
 
         return loginStatus;
-    }
+    }*/
 
     public abstract EnumRegisterStatus register();
 

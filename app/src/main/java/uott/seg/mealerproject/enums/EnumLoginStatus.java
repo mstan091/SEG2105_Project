@@ -1,13 +1,17 @@
 package uott.seg.mealerproject.enums;
 
 public enum EnumLoginStatus {
-    SUCCESS("Success"),
-    USER_NOT_FOUND("UserNotFound"),
-    INVALID_USER_TYPE("WrongUserType"),
-    INVALID_PWD("InvalidPwd");
+    NOT_LONGIN((short)  -1, "Not login"),
+    SUCCESS((short) 0, "Success"),
+    USER_NOT_FOUND((short) 1, "UserNotFound"),
+    INVALID_USER_TYPE((short) 2, "WrongUserType"),
+    INVALID_PWD((short) 3, "InvalidPwd");
 
     private String loginStatus;
-    EnumLoginStatus(String loginStatus) {
+    private short statusCode;
+
+    EnumLoginStatus(short statusCode, String loginStatus) {
+        this.statusCode = statusCode;
         this.loginStatus = loginStatus;
     }
 
@@ -16,4 +20,7 @@ public enum EnumLoginStatus {
         return loginStatus;
     }
 
+    public short getStatusCode() {
+        return statusCode;
+    }
 }

@@ -1,5 +1,7 @@
 package uott.seg.mealerproject.activities;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
