@@ -9,9 +9,9 @@
     <include
         android:id="@+id/include"
         layout="@layout/activity_register"
-        android:layout_width="414dp"
-        android:layout_height="333dp"
-        tools:layout_editor_absoluteX="0dp"
+        android:layout_width="420dp"
+        android:layout_height="296dp"
+        tools:layout_editor_absoluteX="-5dp"
         tools:layout_editor_absoluteY="0dp" />
 
     <Button
@@ -54,8 +54,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="352dp"
-        android:layout_height="100dp"
+        android:layout_width="349dp"
+        android:layout_height="101dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="11dp"
         app:layout_constraintStart_toStartOf="parent"
