@@ -19,12 +19,36 @@
 
     <TextView
         android:id="@+id/tvCookStatus"
-        android:layout_width="390dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="67dp"
+        android:layout_width="368dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
         android:text="Your Account Status:"
+        android:textColor="#040303"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include2" />
+
+    <Button
+        android:id="@+id/btnEditMealList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Edit your menu"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCookStatus" />
+
+    <Button
+        android:id="@+id/btnAddMealMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="7dp"
+        android:text="Add meal to menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintStart_toEndOf="@+id/btnMeals"
+        app:layout_constraintTop_toBottomOf="@+id/tvCookStatus" />
 </androidx.constraintlayout.widget.ConstraintLayout>

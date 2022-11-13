@@ -13,10 +13,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
+import uott.seg.mealerproject.enums.*;
 import uott.seg.mealerproject.enums.EnumComplaintStatus;
 import uott.seg.mealerproject.enums.EnumCookStatus;
 import uott.seg.mealerproject.enums.EnumLoginStatus;
 import uott.seg.mealerproject.enums.EnumUserType;
+import uott.seg.mealerproject.misc.*;
 import uott.seg.mealerproject.misc.CreditCardInfo;
 import uott.seg.mealerproject.misc.UserComplaint;
 import uott.seg.mealerproject.users.MealerUser;
@@ -32,6 +34,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String TABLE_CREDIT_CARD = "creditCard";
     private static final String TABLE_COOK_DESC = "cookDesc";
     private static final String TABLE_COMPL = "complaint";
+    //Meal table
+    private static final String TABLE_MEAL = "meal";
 
     //private static final short USERID = 'uID';
     private static final String EMAIL = "email";
@@ -57,6 +61,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String CLIENT_EMAIL = "clientEmail";
     private static final String USER_COMPL =  "complaints";
     private static final String COMPL_STAT = "complStatus";
+
+    // Meal table columns
+    private static final String MEAL_NAME = "mealName";
+    private static final String MEAL_TYPE = "mealType";
+    private static final String CUISINE_TYPE =  "cuisineType";
+    private static final String STATUS = "status";
+    private static final String COOK_EMAIL_MEAL = "cookEmail";
+    private static final String ALLERGENS = "allergens";
+    private static final String PRICE =  "price";
+    private static final String INGREDIENTS = "ingredients";
+    private static final String DESC = "description";
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -131,6 +146,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         db.execSQL(CREATE_COMPL_TABLE);
 
+        // Create meal table
+        String CREATE_MEAL_TABLE = "CREATE TABLE " + TABLE_MEAL + "("
+                + MEAL_NAME + " TEXT," + MEAL_TYPE + " TEXT," + CUISINE_TYPE + " TEXT,"
+                + STATUS + " TINYINT," + COOK_EMAIL_MEAL + " TEXT,"
+                + ALLERGENS  + " TEXT," + PRICE + " TINYINT,"
+                + INGREDIENTS + " TEXT," + DESC + " TEXT,"
+                + "FOREIGN KEY(" + COOK_EMAIL_MEAL + ") REFERENCES " + TABLE_USER + "(" + EMAIL + ")"
+                + " On UPDATE RESTRICT ON DELETE RESTRICT" + ")";
+        db.execSQL(CREATE_MEAL_TABLE);
+
 
     }
 
@@ -144,6 +169,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_CREDIT_CARD);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_COOK_DESC);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_COMPL);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_MEAL);
 
         // Create tables again
         onCreate(db);
@@ -237,6 +263,70 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         userValues.put(LOGIN_STAT, String.valueOf(EnumLoginStatus.NOT_LONGIN.getStatusCode()));
     }
 
+    public  void addMeal(Meal meal) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues mealValues = new ContentValues();
+
+        mealValues.put(MEAL_NAME, meal.getMealName());
+        mealValues.put(MEAL_TYPE, meal.getMealType());
+        mealValues.put(CUISINE_TYPE, meal.getCuisineType() );
+        mealValues.put(STATUS, meal.getMealStatus().getStatusCode());
+        mealValues.put(COOK_EMAIL_MEAL, meal.getCookEmail());
+        mealValues.put(ALLERGENS, meal.getAllergens() );
+        mealValues.put(INGREDIENTS, meal.getIngredients() );
+        mealValues.put(PRICE, meal.getPrice());
+        mealValues.put(DESC, meal.getDesc() );
+        db.insert(TABLE_MEAL, null, mealValues);
+    }
+
+    public void removeMeal(long rowId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String sql = "Delete From " + TABLE_MEAL + " Where RowId = ?";
+        db.execSQL(sql, new String[]{String.valueOf(rowId)});
+    }
+
+    public EnumMealStatus getMealStatus(String cookEmail, String mealName) {
+        EnumMealStatus mealStatus = null;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String sql = "Select Status from " + TABLE_MEAL  + " WHERE cookEmail = ? and mealName = ?";
+        Cursor resultSet = db.rawQuery(sql, new String[]{cookEmail, mealName});
+
+        while (resultSet.moveToNext()) {
+            mealStatus = EnumMealStatus.getMealStatus((short) resultSet.getInt(0));
+        }
+        return mealStatus;
+    }
+
+    public void setMealStatus(EnumMealStatus status, long rowId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String sql = "Update " + TABLE_MEAL + " Set " + STATUS  + " = " + status.getStatusCode() + " Where RowId = ?";
+        Log.d("Set meal status =========== ", sql);
+        db.execSQL(sql, new String[]{String.valueOf(rowId)});
+    }
+
+    public ArrayList<Meal> getMealList(String cookEmail) {
+        // EnumMealStatus mealStatus = null;
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<Meal> mealList = new ArrayList<>();
+        //Aici
+        String sql = "Select RowId, mealName, status from " + TABLE_MEAL  + " WHERE cookEmail = ?";
+        Cursor resultSet = db.rawQuery(sql, new String[]{cookEmail});
+
+        while (resultSet.moveToNext()) {
+            //Aici
+            long rowId = resultSet.getLong(0);
+            String mealName = resultSet.getString(1);
+            String status = resultSet.getString(2);
+            EnumMealStatus mealStatus = EnumMealStatus.getMealStatus((short) resultSet.getInt(2));
+            Meal m = new Meal(cookEmail,mealName,mealStatus);
+            m.setMealID(rowId);
+            mealList.add(m);
+        }
+        return mealList;
+    }
+
     public boolean isUserExist(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         String sql = "Select * from " + TABLE_USER  + " WHERE EMAIL = ?";
@@ -287,6 +377,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         String sql = "Select cookStatus from " + TABLE_COOK_DESC  + " WHERE email = ?";
+        Log.d("Cook status", sql);
         Cursor resultSet = db.rawQuery(sql, new String[]{cookEmail});
 
         while (resultSet.moveToNext()) {
@@ -333,6 +424,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         String sql = "Delete From " + TABLE_USER + " Where userType = ?";
         db.execSQL(sql,  new String[]{String.valueOf(EnumUserType.Admin.getUserTypeCode())});
+    }
+
+    public void removeAllMeal() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String sql = "Delete From " + TABLE_MEAL;
+        db.execSQL(sql);
     }
 
     public EnumLoginStatus validateLogin(String email, String pwd, EnumUserType userType) {

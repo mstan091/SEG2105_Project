@@ -24,9 +24,11 @@ import uott.seg.mealerproject.enums.EnumLoginStatus;
 import uott.seg.mealerproject.enums.EnumUserType;
 import uott.seg.mealerproject.misc.CreditCardInfo;
 import uott.seg.mealerproject.misc.UserComplaint;
+import uott.seg.mealerproject.misc.Meal;
 import uott.seg.mealerproject.users.MealerUserAdmin;
 import uott.seg.mealerproject.users.MealerUserClient;
 import uott.seg.mealerproject.users.MealerUserCook;
+
 
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     RadioButton rbClient, rbCook, rbAdmin;
     EditText edLoginID;
 
+    // CREATE TABLES IN THE DATABASE
     protected DatabaseHandler db = new DatabaseHandler(this);
 
     @Override
@@ -241,8 +244,22 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private void insertAdmin() {
         MealerUserAdmin adminUser = new MealerUserAdmin("Admin", "Mealer", "admin@gmail.com", "admin", "1 admin street mealer city");
         db.addAdmin(adminUser);
-
     }
+
+    private void insertMeal(){
+        Meal meal1 = new Meal("Meal1", "Main", "Indian cuisine", "cook1@mealer.com", "allergens", 10.0f, "tofu,onion,pepper","desc 1" );
+        db.addMeal(meal1);
+
+        Meal meal2 = new Meal("Meal2", "Apetizer", "Meditranean cuisine", "cook2@mealer.com", "allergens", 5.5f, "olive,tomatoes,pepper","desc 2" );
+        db.addMeal(meal2);
+
+        Meal meal3 = new Meal("Meal3", "Desert", "Conteporan cuisine", "cook3@mealer.com", "allergens", 6.0f, "strawberries,sugar,butter","desc 3" );
+        db.addMeal(meal3);
+
+        Meal meal4 = new Meal("Meal2", "Main", "Modern cuisine", "cook3@mealer.com", "allergens", 6.0f, "rice, fish, oil","desc 2" );
+        db.addMeal(meal4);
+    }
+
 
     private void loadDBForTesting() {
         // MS
@@ -255,10 +272,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             db.removeAllComplaints();
             db.removeAllCooks();
             db.removeAllClients();
+            Log.d("removeallmeal", "Remove meal");
+            db.removeAllMeal();
             insertAdmin();
             insertCook();
             insertClient();
             insertUserComplaint();
+            insertMeal();
+            Log.d("insertmeal","Inser MEal");
         }
     }
 
