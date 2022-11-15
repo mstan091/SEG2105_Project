@@ -1,0 +1,202 @@
+enum EnumUserType { Client, Cook, Admin } 
+enum EnumCookStatus { NORMAL, SUSPENDED, REVOKED } 
+enum EnumLoginStatus {SUCCESS,USER_NOT_FOUND,INVALID_USER_TYPE,INVALID_PWD,NOT_LONGIN } 
+enum EnumRegisterStatus { SUCCESS, USER_EXIST } 
+enum EnumComplaintStatus {NEW,DISMISS,SUSPENDED_COOK,REVOKED_COOK}
+enum EnumMealStatus {AVAILABLE, UNAVAILABLE}
+
+class MealerUser{
+  short userID;
+  String fName;
+  String lName;
+  String email;
+  String pwd;
+  String addr;
+  EnumUserType userType; 
+ }
+
+class MealerUserClient {
+   isA MealerUser;
+CreditCardInfo cardInfo;
+  1 -- * UserComplaint;
+}
+
+
+class MealerUserCook{
+    isA MealerUser;
+String cookDescription;
+  Image imgCheck;
+  1 -- * UserComplaint;
+}
+
+
+class MealerUserAdmin{ 
+  isA MealerUser;
+}
+
+class CreditCardInfo {
+String holderName;
+    String cardNum;
+    String expireDate; 
+   String secCode;
+  1 -- 1 MealerUserClient;
+}
+
+
+class UserComplaint{
+ String cookEmail;
+    String clientEmail;
+    String userCompl;
+    long complId;
+    EnumComplaintStatus complStatus;
+    Date complDate;
+    String ROWID ;
+    String COOK_EMAIL ;
+    String CLIENT_EMAIL ;
+    String COMPLAINT ;}
+
+
+class RegisterActivity{
+  int MIN_LEN_NAME;
+ int MAX_LEN_NAME ;
+ int MIN_LEN_EMAIL;
+ int MAX_LEN_EMAIL;
+ int MIN_LEN_ADDR;
+ int MAX_LEN_ADDR;
+ int MIN_LEN_PWD;
+ int MAX_LEN_PWD;
+ boolean isValid;
+ EnumUserType userType;
+ String email;
+ String pwd;
+ String pwd2;
+ String fName;
+ String Name
+ String addr;
+}
+
+class RegisterClientActivity {
+   isA RegisterActivity;
+int MIN_LEN_SEC;
+   int MAX_LEN_SEC;
+   int MIN_LEN_CARD_NUM;
+   int MAX_LEN_CARD_NUM;
+}
+
+class RegisterCookActivity {
+  isA RegisterActivity;
+byte[] byteImgCheck;
+}
+
+class Meal{
+
+long mealID;
+String mealName;
+String mealType;
+String cuisineType;
+String cookEmail;
+EnumMealStatus mealStatus;
+String allergens;
+String ingredients;
+String desc;
+float price;
+float rating;
+MealerUserCook cook;
+
+  * -- 1 MealerUserCook;
+}
+
+class AddMealActivity{  
+  *-- 1 MealListActivity;
+  * -- 1 RegisterCookActivity;
+} 
+class MealListActivity{  
+  1 -- 1 RegisterCookActivity;
+}
+class ComplaintActivity{  * -- 1 RegisterClientActivity;
+}
+
+
+namespace -;
+
+
+class MealerUser
+{
+  position 166 45 194.788 180.962;
+}
+
+class MealerUserClient
+{
+  position 154 283 189.172 58.3594;
+  position.association MealerUserClient__userComplaint 152,53 76,0;
+  position.association MealerUserClient__UserComplaint 160,58 79,0;
+}
+
+class MealerUserCook
+{
+  position 353 284 181.781 75.3594;
+  position.association MealerUserCook__userComplaint 83,30 109,-1;
+  position.association MealerUserCook__UserComplaint 40,75 127,0;
+}
+
+class CreditCardInfo
+{
+  position 137 394 156.55 129.962;
+  position.association CreditCardInfo__MealerUserClient 30,0 96,58;
+}
+
+class RegisterActivity
+{
+  position 642 0 195.017 296.4;
+}
+
+class RegisterClientActivity
+{
+  position 579 357 202.3 115.733;
+}
+
+class RegisterCookActivity
+{
+  position 860 379 173.517 61.5333;
+}
+
+namespace -;
+
+
+class MealerUserAdmin
+{
+  position 6 268 140.969 41.3594;
+}
+
+class UserComplaint
+{
+  position 256 569 267.031 211.359;
+}//$?[End_of_model]$?
+
+namespace -;
+
+
+class ComplaintActivity
+{
+  position 615 500 141.133 43.4667;
+  position.association ComplaintActivity__RegisterClientActivity 67,4 96,116;
+}
+
+class Meal
+{
+  position 606 599 109 43.4667;
+  position.association Meal__MealerUserCook 55,0 94,80;
+}
+
+class AddMealActivity
+{
+  position 795 496 130.017 43.4667;
+  position.association AddMealActivity__MealListActivity 131,21 0,23;
+  position.association AddMealActivity__RegisterCookActivity 72,0 52,56;
+}
+
+class MealListActivity
+{
+  position 988 497 127.567 43.4667;
+  position.association MealListActivity__RegisterCookActivity 72,0 138,62;
+}
