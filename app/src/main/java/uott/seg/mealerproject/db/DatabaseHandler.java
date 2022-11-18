@@ -86,7 +86,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL(CREATE_USER_TABLE);
         // Create Admin account
         ContentValues adminValues = new ContentValues();
-        adminValues.put(EMAIL, "admin@gmail.com");
+        //adminValues.put(EMAIL, "admin@gmail.com");
+        adminValues.put(EMAIL, "admin@mealer.com");
         adminValues.put(PWD, "admin");
 
         adminValues.put(FNAME, "John");

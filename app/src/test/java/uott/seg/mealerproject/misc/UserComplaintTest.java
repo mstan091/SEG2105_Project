@@ -10,13 +10,13 @@ public class UserComplaintTest extends TestCase {
     @Test
     public void testGetComplStatus() {
         String incookEmail , inclientEmail, inuserCompl ;
-        String outComplStatus;
+        EnumComplaintStatus outComplStatus;
 
-        //EnumComplaintStatus expectStatus = EnumComplaintStatus.valueOf("NEW");
-        String expectStatus = "New";
+        EnumComplaintStatus expectStatus = EnumComplaintStatus.valueOf("NEW");
+        //String expectStatus = "New";
 
         UserComplaint userComplaint = new UserComplaint("cook2@mealer.com", "client2@mealer.com", "bad food");
-        outComplStatus = String.valueOf(userComplaint.getComplStatus());
+        outComplStatus = userComplaint.getComplStatus();
         assertEquals(outComplStatus, expectStatus );
 
     }
