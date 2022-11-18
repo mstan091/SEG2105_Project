@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colortransparent">#00FFFFFF</color>
+    <color name="mealerOrange">#FFA561</color>
+    <color name="mealerPink">#DA7C7C</color>
+    <color name="mealerWatermelon">#FF455B</color>
+    <color name="mealerButton">#00BCD4</color>
 </resources>
