@@ -12,10 +12,10 @@
         android:id="@+id/registrationLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="37dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="626dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="647dp"
         android:fontFamily="@font/outfitmedium"
         android:text="Registration"
         android:textColor="@color/white"
@@ -213,7 +213,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_percent="0.14" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bgbottom"
