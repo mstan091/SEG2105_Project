@@ -4,499 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
     android:background="@drawable/gradient"
+
+
+
     tools:context="uott.seg.mealerproject.activities.MainActivity">
-
-    <TextView
-        android:id="@+id/mealer"
-        android:layout_width="230dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="137dp"
-        android:layout_marginBottom="21dp"
-        android:fontFamily="@font/outfitmedium"
-        android:text="@string/Logo"
-        android:textColor="#FFFFFF"
-        android:textSize="70sp"
-        app:layout_constraintBottom_toTopOf="@+id/boxbg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-    <TextView
-        android:id="@+id/boxbg"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/boxbg"
-        app:layout_constraintBottom_toTopOf="@id/boxbgbottom"
-        app:layout_constraintEnd_toStartOf="@id/guideline3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@id/boxbgtop"
-        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/teLoginPwd"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
         android:autofillHints="Type in your password"
         android:background="@color/teal_200"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/passwordbottom"
-        app:layout_constraintEnd_toStartOf="@id/formend"
-
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/formstart"
-        app:layout_constraintTop_toTopOf="@id/passwordtop"
-
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/teLoginEmail" />
 
     <TextView
         android:id="@+id/password"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fontFamily="@font/outfitmedium"
-        android:text="PASSWORD"
-        android:textAlignment="center"
-        android:textColor="@color/mealerPink"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/passwordfieldbottom"
-        app:layout_constraintEnd_toStartOf="@id/passwordend"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@id/passwordstart"
-
-
-        app:layout_constraintTop_toTopOf="@id/passwordfieldtop"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/outfitmedium"
-        android:text="I'M A:"
-        android:textColor="@color/mealerOrange"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@id/imabottom"
-        app:layout_constraintEnd_toStartOf="@id/imaend"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@id/imastart"
-        app:layout_constraintTop_toTopOf="@id/imatop"
-        app:layout_constraintVertical_bias="0.6" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/clientcook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.49" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/usertypestart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.21" />
-
-    <RadioButton
-        android:id="@+id/rbClient"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:checked="true"
-        android:fontFamily="@font/outfitmedium"
-        android:text="CLIENT"
-        android:textColor="@color/mealerWatermelon"
-        app:layout_constraintBottom_toTopOf="@id/clientcookbottom"
-        app:layout_constraintEnd_toStartOf="@+id/clientend"
-        app:layout_constraintStart_toStartOf="@id/clientstart"
-        app:layout_constraintTop_toTopOf="@id/clientcooktop"
-        tools:layout_editor_absoluteX="115dp"
-        tools:layout_editor_absoluteY="252dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/usertypeend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.76" />
+        android:layout_width="78dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="20dp"
+        android:text="Password :"
+        android:textAlignment="viewEnd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginID" />
 
     <EditText
         android:id="@+id/teLoginEmail"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="312dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@id/loginidbottom"
-        app:layout_constraintEnd_toStartOf="@id/formend"
-        app:layout_constraintStart_toStartOf="@id/formstart"
-        app:layout_constraintTop_toTopOf="@id/loginidtop"
+        app:layout_constraintStart_toEndOf="@+id/loginID"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="386dp" />
+    <RadioGroup
+        android:id="@+id/rgLoginType"
+        android:layout_width="141dp"
+        android:layout_height="162dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <RadioButton
+            android:id="@+id/rbClient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Client" />
+
+        <RadioButton
+            android:id="@+id/rbCook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cook" />
+
+        <RadioButton
+            android:id="@+id/rbAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Administrator" />
+    </RadioGroup>
 
     <TextView
         android:id="@+id/loginID"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fontFamily="@font/outfitmedium"
-        android:text="LOGIN ID:"
-        android:textAlignment="center"
-        android:textColor="@color/mealerPink"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/loginIDbottom"
-        app:layout_constraintEnd_toStartOf="@id/loginIDend"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/loginIDstart"
-        app:layout_constraintTop_toTopOf="@id/loginIDtop"
-        app:layout_constraintVertical_bias="1.0" />
+        android:layout_width="78dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="328dp"
+        android:text="Login ID :"
+        android:textAlignment="viewEnd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnRegister"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="4dp"
-        android:backgroundTint="@color/mealerButton"
-        android:fontFamily="@font/outfitmedium"
+        android:layout_width="192dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
         android:text="Create Account"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/createbottom"
-        app:layout_constraintEnd_toStartOf="@id/buttonend"
-        app:layout_constraintStart_toStartOf="@id/buttonstart"
-        app:layout_constraintTop_toTopOf="@id/createtop" />
+        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="@color/mealerButton"
-        android:fontFamily="@font/outfitmedium"
+        android:layout_width="192dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="48dp"
         android:text="Login"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/loginbottom"
-        app:layout_constraintEnd_toStartOf="@id/buttonend"
-        app:layout_constraintStart_toStartOf="@id/buttonstart"
-        app:layout_constraintTop_toTopOf="@id/logintop"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="589dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.92" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/boxbgtop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/boxbgbottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/buttonstart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/buttonend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.74" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/logintop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.755" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/loginbottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.819" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/createtop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/createbottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.97" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/formstart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.19" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/formend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.80" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/usertypetop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.23" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/usertypebottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/loginidtop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.49" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/loginidbottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.54" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/passwordtop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.64" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/passwordbottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.68" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/loginIDstart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.37" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/loginIDend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.61" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/loginIDtop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.46" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/loginIDbottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.52" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/passwordstart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.35" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/passwordend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.63" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/passwordfieldtop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.58" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/passwordfieldbottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.63" />
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
-
-    <RadioButton
-        android:id="@+id/rbAdmin"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fontFamily="@font/outfitmedium"
-        android:text="ADMINISTRATOR"
-        android:textColor="@color/mealerWatermelon"
-        app:layout_constraintBottom_toTopOf="@id/adminbottom"
-        app:layout_constraintEnd_toStartOf="@id/adminend"
-        app:layout_constraintStart_toStartOf="@id/adminstart"
-        app:layout_constraintTop_toTopOf="@id/admintop"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="287dp" />
-
-    <RadioButton
-        android:id="@+id/rbCook"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fontFamily="@font/outfitmedium"
-        android:text="COOK"
-        android:textColor="@color/mealerWatermelon"
-        app:layout_constraintBottom_toTopOf="@id/clientcookbottom"
-        app:layout_constraintEnd_toStartOf="@+id/cookend"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/clientend"
-        app:layout_constraintTop_toTopOf="@id/clientcooktop"
-        tools:layout_editor_absoluteY="252dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/imastart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.46" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/imaend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.58" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/imatop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.24" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/imabottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.28" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/clientstart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.28" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/clientend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.52" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/cookend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.72" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/clientcooktop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/clientcookbottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/adminstart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.32" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/adminend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.67" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/admintop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/adminbottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teLoginPwd" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

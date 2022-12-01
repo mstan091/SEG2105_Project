@@ -10,7 +10,7 @@
         android:id="@+id/include"
         layout="@layout/activity_register"
         android:layout_width="420dp"
-        android:layout_height="wrap_content"
+        android:layout_height="296dp"
         tools:layout_editor_absoluteX="-5dp"
         tools:layout_editor_absoluteY="0dp" />
 
@@ -18,14 +18,16 @@
         android:id="@+id/btnAddCook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
         android:text="Regist"
-        tools:layout_editor_absoluteX="293dp"
-        tools:layout_editor_absoluteY="797dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/tvVoidCheck"
-        android:layout_width="222dp"
-        android:layout_height="37dp"
+        android:layout_width="161dp"
+        android:layout_height="20dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="Load a Void Check Here :"
@@ -37,6 +39,8 @@
         android:id="@+id/teDesc"
         android:layout_width="340dp"
         android:layout_height="46dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="12dp"
         android:background="@android:drawable/alert_light_frame"
         android:ems="10"
         android:inputType="textPostalAddress|textMultiLine"
@@ -45,15 +49,17 @@
         android:singleLine="false"
         android:textAlignment="viewStart"
         android:textSize="14sp"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="576dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCookDesc" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="349dp"
         android:layout_height="101dp"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="687dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="11dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVoidCheck"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
@@ -61,7 +67,6 @@
         android:layout_width="98dp"
         android:layout_height="40dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="4dp"
         android:text="Load"
         app:layout_constraintStart_toEndOf="@+id/tvVoidCheck"
         app:layout_constraintTop_toBottomOf="@+id/teDesc" />
@@ -70,9 +75,11 @@
         android:id="@+id/tvCookDesc"
         android:layout_width="140dp"
         android:layout_height="21dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
         android:text="Cook Description :"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="544dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

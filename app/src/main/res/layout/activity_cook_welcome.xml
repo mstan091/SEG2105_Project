@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
     tools:context=".activities.WelcomeCookActivity">
 
 
@@ -25,7 +24,6 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
         android:text="Your Account Status:"
-        android:fontFamily="@font/outfitmedium"
         android:textColor="#040303"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
