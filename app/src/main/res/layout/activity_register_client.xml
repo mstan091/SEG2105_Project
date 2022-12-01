@@ -4,121 +4,342 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context="uott.seg.mealerproject.activities.RegisterClientActivity">
 
+
+    <TextView
+        android:id="@+id/registrationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/outfitmedium"
+        android:text="Registration"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="37dp" />
+
+    <TextView
+        android:id="@+id/boxbg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/boxbg"
+        app:layout_constraintBottom_toTopOf="@id/bgbottom"
+        app:layout_constraintEnd_toStartOf="@+id/bgend"
+        app:layout_constraintStart_toStartOf="@+id/bgstart"
+        app:layout_constraintTop_toTopOf="@id/bgtop" />
 
     <include
         android:id="@+id/include"
         layout="@layout/activity_register"
-        android:layout_width="378dp"
-        android:layout_height="319dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/includebottom"
+        app:layout_constraintEnd_toStartOf="@+id/includeend"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/includestart"
+
+        app:layout_constraintTop_toTopOf="@+id/includetop"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tvCardNum"
-        android:layout_width="136dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="22dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/outfitmedium"
         android:text="Credit Card Number :"
         android:textAlignment="viewEnd"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/creditcardbottom"
+        app:layout_constraintEnd_toStartOf="@+id/fieldalignmentend"
+        app:layout_constraintStart_toStartOf="@+id/fieldalignmentstart"
+        app:layout_constraintTop_toTopOf="@+id/creditcardtop"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="406dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fieldalignmentend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.37" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fieldalignmentstart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.097" />
 
     <TextView
         android:id="@+id/tvHolderName"
-        android:layout_width="136dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/outfitmedium"
         android:text="Card Holder Name :"
         android:textAlignment="viewEnd"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCardNum" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/cardholderbottom"
+        app:layout_constraintEnd_toStartOf="@+id/fieldalignmentend"
+        app:layout_constraintStart_toStartOf="@+id/fieldalignmentstart"
+        app:layout_constraintTop_toTopOf="@+id/cardholdertop"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="453dp" />
 
     <EditText
         android:id="@+id/teExpireDate"
-        android:layout_width="94dp"
+        android:layout_width="0dp"
         android:layout_height="36dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="MM/YY"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/tvExpireDate"
-        app:layout_constraintTop_toBottomOf="@+id/teSecCod" />
+        app:layout_constraintBottom_toTopOf="@id/expbottom"
+        app:layout_constraintEnd_toStartOf="@+id/fieldend"
+        app:layout_constraintStart_toStartOf="@+id/fieldstart"
+        app:layout_constraintTop_toTopOf="@+id/exptop"
+        tools:layout_editor_absoluteY="560dp" />
 
     <TextView
         android:id="@+id/tvSecCode"
-        android:layout_width="136dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="Security Code :"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/outfitmedium"
+        android:text="Security \nCode :"
         android:textAlignment="viewEnd"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvHolderName" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/securitybottom"
+        app:layout_constraintEnd_toStartOf="@+id/fieldalignmentend"
+        app:layout_constraintStart_toStartOf="@+id/fieldalignmentstart"
+        app:layout_constraintTop_toTopOf="@+id/securitytop"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="495dp" />
 
     <TextView
         android:id="@+id/tvExpireDate"
-        android:layout_width="136dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/outfitmedium"
         android:text="Expire Date :"
         android:textAlignment="viewEnd"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSecCode" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/expbottom"
+        app:layout_constraintEnd_toStartOf="@+id/fieldalignmentend"
+        app:layout_constraintStart_toStartOf="@+id/fieldalignmentstart"
+        app:layout_constraintTop_toTopOf="@+id/exptop"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="560dp" />
 
     <EditText
         android:id="@+id/teSecCod"
-        android:layout_width="66dp"
+        android:layout_width="0dp"
         android:layout_height="36dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="svc"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/tvSecCode"
-        app:layout_constraintTop_toBottomOf="@+id/teHolderName" />
+        app:layout_constraintBottom_toTopOf="@id/securitybottom"
+        app:layout_constraintEnd_toStartOf="@+id/fieldend"
+        app:layout_constraintStart_toStartOf="@+id/fieldstart"
+        app:layout_constraintTop_toTopOf="@+id/securitytop"
+        tools:layout_editor_absoluteY="495dp" />
 
     <EditText
         android:id="@+id/teHolderName"
-        android:layout_width="209dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ems="10"
         android:hint="Card holder name"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/tvHolderName"
-        app:layout_constraintTop_toBottomOf="@+id/teCardNum" />
+        app:layout_constraintBottom_toTopOf="@id/cardholderbottom"
+        app:layout_constraintEnd_toStartOf="@+id/fieldend"
+        app:layout_constraintStart_toStartOf="@+id/fieldstart"
+        app:layout_constraintTop_toTopOf="@+id/cardholdertop"
+        tools:layout_editor_absoluteY="444dp" />
 
     <EditText
         android:id="@+id/teCardNum"
-        android:layout_width="206dp"
+        android:layout_width="0dp"
         android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Card number"
         android:inputType="number"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/tvCardNum"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
+        app:layout_constraintBottom_toTopOf="@id/creditcardbottom"
+        app:layout_constraintEnd_toStartOf="@+id/fieldend"
+        app:layout_constraintStart_toStartOf="@+id/fieldstart"
+        app:layout_constraintTop_toTopOf="@+id/creditcardtop"
+        tools:layout_editor_absoluteY="395dp" />
 
     <Button
         android:id="@+id/btnAddClient"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        app:layout_constraintBottom_toTopOf="@id/regisbottom"
+        app:layout_constraintTop_toTopOf="@+id/registop"
+        app:layout_constraintEnd_toStartOf="@+id/regisend"
+        app:layout_constraintStart_toStartOf="@+id/regisstart"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="152dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bgstart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="59dp"
-        android:text="Regist"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bgend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bgtop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bgbottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fieldstart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fieldend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/includetop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/includebottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/includestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.01" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/includeend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.99" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/creditcardtop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.47" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/creditcardbottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.53" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cardholdertop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.54" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cardholderbottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/securitytop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.61" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/securitybottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.67" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/exptop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.68" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/expbottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.74" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/registop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/regisbottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.91" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/regisstart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.38" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/regisend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
