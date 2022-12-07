@@ -8,9 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import uott.seg.mealerproject.R;
-import uott.seg.mealerproject.adapters.MealViewAdapter;
 import uott.seg.mealerproject.enums.EnumCookStatus;
-import uott.seg.mealerproject.enums.EnumUserType;
 
 public class WelcomeCookActivity extends  WelcomeActivity  {
 
@@ -40,6 +38,17 @@ public class WelcomeCookActivity extends  WelcomeActivity  {
             Button btnM1 = findViewById(R.id.btnEditMealList);
             btnM1.setEnabled(true);
         }
+
+        Button btnViewOrder = (Button) findViewById(R.id.btnProcessOrder);
+        btnViewOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), ProcessOrderActivity.class);
+                intent.putExtra("UserID", userID);
+
+                view.getContext().startActivity(intent);
+            }
+        });
 
         Button btnLogout = (Button) findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -78,5 +87,17 @@ public class WelcomeCookActivity extends  WelcomeActivity  {
                 view.getContext().startActivity(intent);
             }
         });
+
+        Button btnMyProfile = (Button) findViewById(R.id.btnMyDetails);
+        btnMyProfile.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), MyCookDetails.class);
+                intent.putExtra("cookID", userID);
+                view.getContext().startActivity(intent);
+
+
+            }
+            });
+        }
+
     }
-}

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSearchMeal1"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--app:layout_constraintTop_toBottomOf="@+id/tvFirstName" -->
+
+        <TextView
+            android:id="@+id/tvMyMealName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="#E1E3E5"
+            android:text="Meal Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvMyMealType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="#E1E3E5"
+            android:text="Type"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvMyCuisineType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="#E1E3E5"
+            android:text="Cuisine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="15dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:background="#E1E3E5"
+            android:text="$:"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="#E1E3E5"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSearchMeal2"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSearchMeal1">
+
+        <TextView
+            android:id="@+id/tvMealDesc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="#E1E3E5"
+            android:text="Meal Description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSearchMeal3"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSearchMeal2">
+
+        <TextView
+            android:id="@+id/tvMealIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="#E1E3E5"
+            android:text="Meal Ingredients"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvMealAllergens"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="#E1E3E5"
+            android:text="Allergens"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSearchMeal4"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSearchMeal3">
+
+        <TextView
+            android:id="@+id/tvPickupAddress"
+            android:layout_width="570dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="#E1E3E5"
+            android:text="Cook Address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSearchMeal5"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSearchMeal4">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:background="#E1E3E5"
+            android:text="Pickup Time :"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tvMyPickupTime"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="#E1E3E5"
+            android:text="Pickup time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:numStars="5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.274"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnCookInfo"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:background="@drawable/search_user"
+            app:iconTintMode="screen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayoutSearchMeal6"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSearchMeal5">
+
+
+        <Button
+            android:id="@+id/btnAccept"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#ff669900"
+            android:text="Time"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck"  />
+        <Button
+            android:id="@+id/btnReject"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#ff669900"
+            android:text="Order"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvRating"
+        android:layout_width="62dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="291dp"
+        android:text="TextView"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible" />
+    <View
+        android:id="@+id/dividerUser"
+        android:layout_width="409dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="4dp"
+        android:background="#747679"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSearchMeal6" />
+</androidx.constraintlayout.widget.ConstraintLayout>

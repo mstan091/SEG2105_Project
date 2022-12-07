@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutMyOrderItem1"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--app:layout_constraintTop_toBottomOf="@+id/tvFirstName" -->
+
+        <TextView
+            android:id="@+id/tvMyMealName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="#E1E3E5"
+            android:text="Meal Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvMyMealType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="#E1E3E5"
+            android:text="Type"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvMyCuisineType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="#E1E3E5"
+            android:text="Cuisine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutMyOrderItem2"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutMyOrderItem1">
+        <TextView
+            android:id="@+id/tvOrderStatus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="#E1E3E5"
+            android:text="Status"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvMyCookEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="#E1E3E5"
+            android:text="Cook email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"  />
+
+        <TextView
+            android:id="@+id/tvMyPickupTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:background="#E1E3E5"
+            android:text="Pickup timr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayoutMyOrderItem3"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutMyOrderItem2">
+
+        <EditText
+            android:id="@+id/teMyComplaint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:background="@android:drawable/alert_light_frame"
+            android:ems="10"
+            android:gravity="top|start"
+            android:hint="Type complaint..."
+            android:inputType="textMultiLine"
+            android:scrollHorizontally="false"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayoutMyOrderItem4"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutMyOrderItem3">
+        <Button
+            android:id="@+id/btnSubmit"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#ff669900"
+            android:text="Submit Complaint"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayoutMyOrderItem5"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutMyOrderItem4">
+
+        <RatingBar
+            android:id="@+id/rbMyCookRate"
+            style="@style/Widget.AppCompat.RatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:numStars="5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.274"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btnRate"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#ff669900"
+            android:text="Rate cook"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+    <View
+        android:id="@+id/dividerOrderItem"
+        android:layout_width="409dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="4dp"
+        android:background="#747679"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutMyOrderItem5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

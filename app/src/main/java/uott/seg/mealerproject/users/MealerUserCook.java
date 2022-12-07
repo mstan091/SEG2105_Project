@@ -15,18 +15,27 @@ public class MealerUserCook extends  MealerUser{
 
 
     private String cookDescription;
+
     private EnumCookStatus status;
     private Bitmap imgCheck;
-
+    private float rating;
+    private int numRating;
 
     byte[] byteImgCheck;
-
     private List<MealOrder> orders;
 
     public MealerUserCook(String fName, String lName, String email, String pwd, String addr) {
         super(fName, lName, email, pwd, addr);
         super.setUserType(EnumUserType.Cook);
         this.status = EnumCookStatus.NORMAL;
+
+    }
+
+    public MealerUserCook(String fName, String lName, String email, String addr) {
+        super(fName, lName, email, addr);
+        super.setUserType(EnumUserType.Cook);
+        this.status = EnumCookStatus.NORMAL;
+
     }
 
     @Override
@@ -76,4 +85,22 @@ public class MealerUserCook extends  MealerUser{
     public void setByteImgCheck(byte[] byteImgCheck) {
         this.byteImgCheck = byteImgCheck;
     }
+
+    public int getNumRating() {
+        return numRating;
+    }
+
+    public void setNumRating(int numRating) {
+        this.numRating = numRating;
+    }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
+    }
+
+
 }

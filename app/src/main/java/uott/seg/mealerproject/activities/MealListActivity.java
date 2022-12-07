@@ -14,7 +14,6 @@ import java.util.HashMap;
 
 import uott.seg.mealerproject.R;
 import uott.seg.mealerproject.db.*;
-import uott.seg.mealerproject.enums.*;
 import uott.seg.mealerproject.adapters.*;
 import uott.seg.mealerproject.misc.*;
 
@@ -37,7 +36,7 @@ public class MealListActivity extends AppCompatActivity {
 
         meals.forEach(meal -> {
             HashMap<String, String> mealItem = new HashMap<>();
-            mealItem.put(Meal.ROWID, String.valueOf(meal.geMealID()));
+            mealItem.put(Meal.MEAL_ID, String.valueOf(meal.geMealID()));
             mealItem.put(Meal.MEAL_NAME, meal.getMealName());
             mealItem.put(Meal.MEAL_STATUS, String.valueOf(meal.getMealStatus()));
             mealItem.put(Meal.COOK_EMAIL, meal.getCookEmail());
@@ -46,7 +45,7 @@ public class MealListActivity extends AppCompatActivity {
         });
 
         String[] from = {Meal.MEAL_NAME, Meal.MEAL_STATUS};
-        int[] to = {R.id.tvMealName, R.id.tvMealStatus};
+        int[] to = {R.id.tvMyMealName, R.id.tvMealStatus};
 
         MealViewAdapter adptMeal = new MealViewAdapter(this, viewDataMeals, R.layout.meal_item, from, to);
         adptMeal.setDBHelper(db);

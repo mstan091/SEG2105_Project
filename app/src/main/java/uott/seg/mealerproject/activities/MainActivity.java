@@ -209,11 +209,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         MealerUserCook cook1 = new MealerUserCook("Cook1", "Mealer", "cook1@mealer.com", "cook1", "1 cook street mealer city");
         cook1.setCookDescription("Cook1 at mealer city and cooks meal");
         cook1.setLoginStatus(EnumLoginStatus.NOT_LONGIN);
+        cook1.setRating(4.6f);
+        cook1.setNumRating(8);
 
 
         MealerUserCook cook2 = new MealerUserCook("Cook2", "Mealer", "cook2@mealer.com", "cook2", "2 cook street mealer city");
         cook2.setCookDescription("Cook2 at mealer city and cooks meal");
         cook2.setLoginStatus(EnumLoginStatus.NOT_LONGIN);
+        cook2.setRating(2.8f);
+        cook2.setNumRating(18);
 
         MealerUserCook cook3 = new MealerUserCook("Cook3", "Mealer", "cook3@mealer.com", "cook3", "3 cook street mealer city");
         cook3.setCookDescription("Cook3 at mealer city and cooks meal");
@@ -242,21 +246,21 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
 
     private void insertAdmin() {
-        MealerUserAdmin adminUser = new MealerUserAdmin("Admin", "Mealer", "admin@gmail.com", "admin", "1 admin street mealer city");
+        MealerUserAdmin adminUser = new MealerUserAdmin("Admin", "Mealer", "admin@mealer.com", "admin", "1 admin street mealer city");
         db.addAdmin(adminUser);
     }
 
     private void insertMeal(){
-        Meal meal1 = new Meal("Meal1", "Main", "Indian cuisine", "cook1@mealer.com", "allergens", 10.0f, "tofu,onion,pepper","desc 1" );
+        Meal meal1 = new Meal("Meal1", "Main", "Indian", "cook1@mealer.com", "allergens", 10.0f, "tofu,onion,pepper","desc 1" );
         db.addMeal(meal1);
 
-        Meal meal2 = new Meal("Meal2", "Apetizer", "Meditranean cuisine", "cook2@mealer.com", "allergens", 5.5f, "olive,tomatoes,pepper","desc 2" );
+        Meal meal2 = new Meal("Meal2", "Apetizer", "Meditranean", "cook2@mealer.com", "allergens", 5.5f, "olive,tomatoes,pepper","desc 2" );
         db.addMeal(meal2);
 
-        Meal meal3 = new Meal("Meal3", "Desert", "Conteporan cuisine", "cook3@mealer.com", "allergens", 6.0f, "strawberries,sugar,butter","desc 3" );
+        Meal meal3 = new Meal("Meal3", "Desert", "Conteporan", "cook3@mealer.com", "allergens", 6.0f, "strawberries,sugar,butter","desc 3" );
         db.addMeal(meal3);
 
-        Meal meal4 = new Meal("Meal2", "Main", "Modern cuisine", "cook3@mealer.com", "allergens", 6.0f, "rice, fish, oil","desc 2" );
+        Meal meal4 = new Meal("Meal2", "Main", "Modern", "cook3@mealer.com", "allergens", 6.0f, "rice, fish, oil","desc 2" );
         db.addMeal(meal4);
     }
 

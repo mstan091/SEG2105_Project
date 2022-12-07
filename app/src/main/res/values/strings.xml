@@ -2,4 +2,9 @@
     <string name="app_name">MealerProject</string>
     <string name="welcome_msg">Welcome! You are logged in as: %1$s</string>
     <string name="cook_status_msg">Your account status is: %1$s</string>
+
+    <string name="meal_name">MealName</string>
+    <string name="meal_type">MealType</string>
+    <string name="cuisine_type">CuisineType</string>
+
 </resources>

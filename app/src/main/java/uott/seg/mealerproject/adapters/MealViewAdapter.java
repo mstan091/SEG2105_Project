@@ -1,7 +1,6 @@
 package uott.seg.mealerproject.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +16,6 @@ import java.util.List;
 import java.util.Map;
 
 import uott.seg.mealerproject.R;
-import uott.seg.mealerproject.activities.AddMealActivity;
-import uott.seg.mealerproject.activities.MealListActivity;
 import uott.seg.mealerproject.db.*;
 import uott.seg.mealerproject.enums.*;
 import uott.seg.mealerproject.misc.*;
@@ -55,7 +52,7 @@ public class MealViewAdapter extends SimpleAdapter implements View.OnClickListen
         //btnEdit.setTag(position);
         btnDelete.setTag(position);
 
-        TextView tvMealName = view.findViewById(R.id.tvMealName);
+        TextView tvMealName = view.findViewById(R.id.tvMyMealName);
         TextView tvMealStatus = view.findViewById(R.id.tvMealStatus);
 
         return view;
@@ -67,7 +64,7 @@ public class MealViewAdapter extends SimpleAdapter implements View.OnClickListen
 
         Log.d("Item index", String.valueOf(n));
         HashMap<String, String> mealItem = ahmMeal.get(n);
-        long rowId = Long.parseLong(mealItem.get(Meal.ROWID));
+        long rowId = Long.parseLong(mealItem.get(Meal.MEAL_ID));
         Log.d("RowID " ,  String.valueOf(rowId));
 
         String mealName = mealItem.get(Meal.MEAL_NAME);

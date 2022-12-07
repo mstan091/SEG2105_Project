@@ -12,7 +12,7 @@
         android:layout_width="420dp"
         android:layout_height="296dp"
         tools:layout_editor_absoluteX="-5dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteY="-1dp" />
 
     <Button
         android:id="@+id/btnAddCook"

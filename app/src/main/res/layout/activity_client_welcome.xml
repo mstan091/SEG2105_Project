@@ -4,7 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.WelcomeClientActivity">
+    tools:context=".activities.WelcomeClientActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-5dp">
+
+    <Button
+        android:id="@+id/btnViewOrder"
+        android:layout_width="149dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="244dp"
+        android:layout_marginTop="20dp"
+        android:text="My Orders"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSearchMeal" />
+
+    <EditText
+        android:id="@+id/teCuisineType"
+        android:layout_width="208dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Cuisine Type"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/tvSearchCuisineType"
+        app:layout_constraintTop_toBottomOf="@+id/teMealType" />
+
+    <EditText
+        android:id="@+id/teMealType"
+        android:layout_width="208dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Meal Type"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/tvSearchMealType"
+        app:layout_constraintTop_toBottomOf="@+id/teMealName" />
+
+    <EditText
+        android:id="@+id/teMealName"
+        android:layout_width="208dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:hint="Meal Name"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/tvSearchMealName"
+        app:layout_constraintTop_toBottomOf="@+id/include2" />
+
+    <TextView
+        android:id="@+id/tvSearchCuisineType"
+        android:layout_width="99dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Cuisine Type:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSearchMealType" />
+
+    <TextView
+        android:id="@+id/tvSearchMealType"
+        android:layout_width="99dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Meal Type:"
+        app:layout_constraintStart_toStartOf="@+id/tvSearchCuisineType"
+        app:layout_constraintTop_toBottomOf="@+id/tvSearchMealName" />
 
     <include
         android:id="@+id/include2"
@@ -15,5 +85,41 @@
         android:layout_marginTop="34dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSearchFood"
+        android:layout_width="117dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:text="Search Food"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include2" />
+
+    <TextView
+        android:id="@+id/tvSearchMealName"
+        android:layout_width="99dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Meal Name:"
+        app:layout_constraintStart_toStartOf="@+id/tvSearchMealType"
+        app:layout_constraintTop_toBottomOf="@+id/tvSearchFood" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="-7dp" />
+
+    <Button
+        android:id="@+id/btnSearchMeal"
+        android:layout_width="149dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="244dp"
+        android:layout_marginTop="24dp"
+        android:text="Search Meal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teCuisineType" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

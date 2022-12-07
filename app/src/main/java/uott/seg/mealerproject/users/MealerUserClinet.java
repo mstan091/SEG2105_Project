@@ -28,16 +28,6 @@ public class MealerUserClinet extends  MealerUser{
         return regStatus;
     }
 
-    public void rateOrder(MealOrder order, float rate) {
-        Meal meal = order.getMeal();
-        meal.setRating(rate);
-    }
-
-    public void complaint(MealOrder order, String msg) {
-        order.setComplaintMsg(msg);
-    }
-
-
     public CreditCardInfo getCardInfo() {
         return cardInfo;
     }

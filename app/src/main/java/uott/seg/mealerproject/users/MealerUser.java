@@ -25,6 +25,13 @@ public abstract class MealerUser {
         Addr = addr;
     }
 
+    public MealerUser(String fName, String lName, String email, String addr) {
+        this.fName = fName;
+        this.lName = lName;
+        this.email = email;
+        Addr = addr;
+    }
+
     public short getUserID() {
         return userID;
     }

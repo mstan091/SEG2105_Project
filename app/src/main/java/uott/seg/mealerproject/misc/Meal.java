@@ -1,38 +1,44 @@
 package uott.seg.mealerproject.misc;
 
-import uott.seg.mealerproject.enums.EnumComplaintStatus;
 import uott.seg.mealerproject.enums.EnumMealStatus;
 import uott.seg.mealerproject.users.MealerUserCook;
 
 public class Meal {
 
-    public static final String ROWID = "rowID";
-    public static final String COOK_EMAIL = "cookEmail";
-    public static final String MEAL_NAME = "mealName";
-    public static final String MEAL_STATUS = "mealStatus";
+    public static final String MEAL_ID = "rowID";
 
+    public static final String MEAL_NAME = "mealName";
+    public static final String MEAL_TYPE = "mealType";
+    public static final String CUISINE_TYPE = "cuisineType";
+
+    public static final String MEAL_STATUS = "status";
+    public static final String COOK_EMAIL = "cookEmail";
+    public static final String MEAL_ALLERGENS = "allergens";
+
+    public static final String MEAL_PRICE = "price";
+    public static final String MEAL_INGREDIENTS = "ingredients";
+    public static final String MEAL_DESCRIPTION =  "description";
 
     private long mealID;
     private String mealName;
     private String mealType;
     private String cuisineType;
-    private String cookEmail;
+
     private EnumMealStatus mealStatus;
+    private String cookEmail;
     private String allergens;
+
+    private float price;
     private String ingredients;
     private String desc;
 
-    private float price;
-    private float rating;
     private MealerUserCook cook;
-
-
 
     public Meal ( String mealName, String mealType, String cuisineType, String cookEmail, String allergens, float price, String ingredients, String desc  ) {
         this.mealName = mealName;
         this.mealType = mealType;
         this.cuisineType=cuisineType;
-        this.mealStatus = EnumMealStatus.UNAVAILABLE;
+        this.mealStatus = EnumMealStatus.AVAILABLE;
         this.cookEmail = cookEmail;
         this.allergens=allergens;
         this.price=price;
@@ -45,6 +51,7 @@ public class Meal {
         this.mealType = mealType;
         this.cuisineType=cuisineType;
         this.mealStatus = status;
+        this.mealStatus = status;
         this.cookEmail = cookEmail;
         this.allergens=allergens;
         this.price=price;
@@ -56,14 +63,6 @@ public class Meal {
         this.cookEmail = cookEmail;
         this.mealName = mealName;
         this.mealStatus = status;
-    }
-
-    public float getRating() {
-        return rating;
-    }
-
-    public void setRating(float rating) {
-        this.rating = rating;
     }
 
     public EnumMealStatus getMealStatus() {
@@ -144,6 +143,15 @@ public class Meal {
 
     public void setMealID(long mealID) {
         this.mealID = mealID;
+    }
+
+
+    public MealerUserCook getCook() {
+        return cook;
+    }
+
+    public void setCook(MealerUserCook cook) {
+        this.cook = cook;
     }
 
 }
