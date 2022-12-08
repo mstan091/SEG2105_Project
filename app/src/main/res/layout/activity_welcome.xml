@@ -8,15 +8,17 @@
 
     <TextView
         android:id="@+id/tvWelcome"
-        android:layout_width="371dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
-        android:text="Welcome "
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogout" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/outfitmedium"
+        android:text="Welcome!"
+        android:textColor="@color/mealerOrange"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@id/welcomebottom"
+        app:layout_constraintEnd_toStartOf="@+id/welcomeend"
+        app:layout_constraintStart_toStartOf="@id/welcomestart"
+        app:layout_constraintTop_toTopOf="@id/welcometop"
+       />
 
     <Button
         android:id="@+id/btnLogout"
@@ -27,5 +29,33 @@
         android:text="Logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/welcomestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.17" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/welcomeend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.82" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/welcometop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.17" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/welcomebottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

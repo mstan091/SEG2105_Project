@@ -1,0 +1,269 @@
+enum EnumUserType { Client, Cook, Admin } 
+enum EnumCookStatus { NORMAL, SUSPENDED, REVOKED } 
+enum EnumLoginStatus {SUCCESS,USER_NOT_FOUND,INVALID_USER_TYPE,INVALID_PWD,NOT_LONGIN } 
+enum EnumRegisterStatus { SUCCESS, USER_EXIST } 
+enum EnumComplaintStatus {NEW,DISMISS,SUSPENDED_COOK,REVOKED_COOK}
+enum EnumMealStatus {AVAILABLE, UNAVAILABLE}
+
+class MealerUser{
+  short userID;
+  String fName;
+  String lName;
+  String email;
+  String pwd;
+  String addr;
+  EnumUserType userType; 
+ }
+
+class MealerUserClient {
+   isA MealerUser;
+CreditCardInfo cardInfo;
+  1 -- * UserComplaint;
+}
+
+
+class MealerUserCook{
+    isA MealerUser;
+String cookDescription;
+  Image imgCheck;
+  1 -- * UserComplaint;
+}
+
+
+class MealerUserAdmin{ 
+  isA MealerUser;
+}
+
+class CreditCardInfo {
+String holderName;
+    String cardNum;
+    String expireDate; 
+   String secCode;
+  1 -- 1 MealerUserClient;
+}
+
+
+class UserComplaint{
+ String cookEmail;
+    String clientEmail;
+    String userCompl;
+    long complId;
+    EnumComplaintStatus complStatus;
+    Date complDate;
+    String rowid ;
+    String cook_emailL ;
+    String client_emailL ;
+    String complaint;}
+
+
+class RegisterActivity{
+  int MIN_LEN_NAME;
+ int MAX_LEN_NAME ;
+ int MIN_LEN_EMAIL;
+ int MAX_LEN_EMAIL;
+ int MIN_LEN_ADDR;
+ int MAX_LEN_ADDR;
+ int MIN_LEN_PWD;
+ int MAX_LEN_PWD;
+ boolean isValid;
+ EnumUserType userType;
+ String email;
+ String pwd;
+ String pwd2;
+ String fName;
+ String Name
+ String addr;
+}
+
+class RegisterClientActivity {
+   isA RegisterActivity;
+int MIN_LEN_SEC;
+   int MAX_LEN_SEC;
+   int MIN_LEN_CARD_NUM;
+   int MAX_LEN_CARD_NUM;
+  1 -- * SearchMealActivity;
+}
+
+class RegisterCookActivity {
+  isA RegisterActivity;
+byte[] byteImgCheck;
+}
+
+class Meal{
+
+long mealID;
+String mealName;
+String mealType;
+String cuisineType;
+String cookEmail;
+EnumMealStatus mealStatus;
+String allergens;
+String ingredients;
+String desc;
+float price;
+float rating;
+MealerUserCook cook;
+
+  * -- 1 MealerUserCook;
+}
+
+class MealOrder{
+  * -- 1 MealerUserClient;
+}
+
+class AddMealActivity{  
+  *-- 1 MealListActivity;
+  * -- 1 RegisterCookActivity;
+} 
+class MealListActivity{  
+  1 -- 1 RegisterCookActivity;
+}
+class ComplaintActivity{  * -- 1 RegisterClientActivity;
+}
+
+class CookRating {
+  float rating;
+  int numOfRating;  
+  
+  * -- 1 MealerUserCook;
+}
+
+
+class SearchMealActivity{
+ArrayList<Meal> meals;}
+
+class MyOrderActivity {
+ArrayList<MealOrder> orders;
+  * -- 1 RegisterClientActivity;
+}
+
+class ProcessOrderActivity{
+ArrayList<MealOrder> orders;
+  * -- * SearchMealActivity;
+}
+
+class CookInfoActivity{  
+  1 -- 1 RegisterCookActivity;
+}
+namespace -;
+
+
+class MealerUser
+{
+  position 166 45 194.788 180.962;
+}
+
+class MealerUserClient
+{
+  position 154 283 189.172 58.3594;
+  position.association MealerUserClient__userComplaint 152,53 76,0;
+  position.association MealerUserClient__UserComplaint 160,58 79,0;
+}
+
+class MealerUserCook
+{
+  position 353 284 181.781 75.3594;
+  position.association MealerUserCook__userComplaint 83,30 109,-1;
+  position.association MealerUserCook__UserComplaint 40,75 127,0;
+}
+
+class CreditCardInfo
+{
+  position 23 454 156.578 109.359;
+  position.association CreditCardInfo__MealerUserClient 30,0 87,58;
+}
+
+class RegisterActivity
+{
+  position 839 11 194.828 279.359;
+}
+
+class RegisterClientActivity
+{
+  position 686 348 202.109 109.359;
+  position.association RegisterClientActivity__SearchMealActivity 117,109 83,0;
+}
+
+class RegisterCookActivity
+{
+  position 955 359 173.328 58.3594;
+}
+
+namespace -;
+
+
+class MealerUserAdmin
+{
+  position 6 268 140.969 41.3594;
+}
+
+class UserComplaint
+{
+  position 149 578 267.031 211.359;
+}
+
+namespace -;
+
+
+class ComplaintActivity
+{
+  position 559 497 140.969 41.3594;
+  position.association ComplaintActivity__RegisterClientActivity 67,0 85,109;
+}
+
+class Meal
+{
+  position 461 587 222.797 245.359;
+  position.association Meal__MealerUserCook 55,0 94,80;
+}
+
+class AddMealActivity
+{
+  position 883 469 129.844 41.3594;
+  position.association AddMealActivity__MealListActivity 131,25 2,0;
+  position.association AddMealActivity__RegisterCookActivity 72,0 52,56;
+}
+
+class MealListActivity
+{
+  position 1037 587 127.406 41.3594;
+  position.association MealListActivity__RegisterCookActivity 72,0 83,58;
+}//$?[End_of_model]$?
+
+namespace -;
+
+
+class MealOrder
+{
+  position 10 387 109 41.3594;
+  position.association MealOrder__MealerUserClient 40,0 0,37;
+}
+
+class CookRating
+{
+  position 335 487 140.141 75.3594;
+  position.association CookRating__MealerUserCook 35,0 75,75;
+}
+
+class SearchMealActivity
+{
+  position 702 598 150.25 58.3594;
+}
+
+class MyOrderActivity
+{
+  position 881 588 137.094 58.3594;
+  position.association MyOrderActivity__RegisterClientActivity 19,0 164,109;
+}
+
+class ProcessOrderActivity
+{
+  position 792 673 162 58.3594;
+  position.association ProcessOrderActivity__SearchMealActivity 40,-1 114,56;
+}
+
+class CookInfoActivity
+{
+  position 1061 455 133.484 41.3594;
+  position.association CookInfoActivity__RegisterCookActivity 36,0 129,58;
+}

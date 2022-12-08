@@ -9,106 +9,133 @@
 
     <EditText
         android:id="@+id/teFName"
-        android:layout_width="210dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:hint="First Name"
         android:inputType="textPersonName"
         android:singleLine="true"
         android:textColorHint="#AAABAE"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/tvFName"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/fieldend"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/fieldend"
+        app:layout_constraintStart_toStartOf="@+id/fieldstart"
+
+        app:layout_constraintBottom_toTopOf="@id/firstnamebottom"
+        app:layout_constraintTop_toTopOf="@id/firstnametop"
+        tools:layout_editor_absoluteY="20dp" />
 
     <TextView
         android:id="@+id/tvFName"
-        android:layout_width="126dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="132dp"
+        android:layout_height="66dp"
+        android:fontFamily="@font/outfitmedium"
         android:text="First Name :"
         android:textAlignment="viewEnd"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/firstnamebottom"
+        app:layout_constraintEnd_toEndOf="@+id/fieldalignmentend"
+        app:layout_constraintHorizontal_bias="1.0"
+
+        app:layout_constraintStart_toStartOf="@+id/fieldalignmentstart"
+        app:layout_constraintTop_toTopOf="@id/firstnametop"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/teLName"
-        android:layout_width="210dp"
+        android:layout_width="0dp"
         android:layout_height="35dp"
-        android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="Last Name"
         android:inputType="textPersonName"
         android:textColorHint="#AAABAE"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/tvLName"
-        app:layout_constraintTop_toBottomOf="@+id/teFName" />
+        app:layout_constraintBottom_toTopOf="@id/lastnamebottom"
+
+        app:layout_constraintEnd_toStartOf="@+id/fieldend"
+        app:layout_constraintStart_toStartOf="@+id/fieldstart"
+        app:layout_constraintTop_toTopOf="@id/lastnametop"
+        tools:layout_editor_absoluteY="71dp" />
 
     <EditText
         android:id="@+id/tePwd2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="Retype your password"
         android:inputType="textPassword"
         android:textColorHint="#AAABAE"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@id/tvPwd2"
-        app:layout_constraintTop_toBottomOf="@+id/tePwd" />
+        app:layout_constraintBottom_toTopOf="@id/retypebottom"
+        app:layout_constraintEnd_toStartOf="@+id/fieldend"
+        app:layout_constraintStart_toEndOf="@+id/fieldend"
+        app:layout_constraintStart_toStartOf="@+id/fieldstart"
+        app:layout_constraintTop_toTopOf="@id/retypetop"
+        tools:layout_editor_absoluteY="197dp" />
 
     <TextView
         android:id="@+id/tvPwd"
-        android:layout_width="126dp"
-
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/outfitmedium"
         android:text="Password :"
         android:textAlignment="viewEnd"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/passbottom"
+        app:layout_constraintEnd_toStartOf="@+id/fieldalignmentend"
+        app:layout_constraintStart_toStartOf="@+id/fieldalignmentstart"
+        app:layout_constraintTop_toTopOf="@id/passtop"
+        tools:layout_editor_absoluteY="153dp" />
 
     <EditText
         android:id="@+id/teEmail"
-        android:layout_width="210dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ems="10"
         android:hint="your.email@uOttawa.ca"
         android:inputType="textEmailAddress"
         android:textColorHint="#AAABAE"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/tvEmail"
-        app:layout_constraintTop_toBottomOf="@+id/teLName" />
+        app:layout_constraintEnd_toStartOf="@+id/fieldend"
+        app:layout_constraintStart_toStartOf="@+id/fieldstart"
+        app:layout_constraintBottom_toTopOf="@id/emailbottom"
+        app:layout_constraintTop_toTopOf="@+id/emailtop"
+
+        tools:layout_editor_absoluteY="106dp" />
 
     <EditText
         android:id="@+id/teAddr"
-        android:layout_width="343dp"
+        android:layout_width="300dp"
         android:layout_height="48dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="4dp"
-        android:background="@android:drawable/alert_light_frame"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textPostalAddress|textMultiLine"
         android:singleLine="false"
         android:textAlignment="viewStart"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAddr" />
+        app:layout_constraintTop_toTopOf="@id/addfieldtop"
+        app:layout_constraintBottom_toTopOf="@id/addfieldbottom"
+        app:layout_constraintEnd_toStartOf="@+id/fieldend"
+        app:layout_constraintStart_toStartOf="@+id/addstart"
+        tools:layout_editor_absoluteY="291dp" />
 
     <TextView
         android:id="@+id/tvAddr"
-        android:layout_width="111dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/outfitmedium"
         android:text="Address :"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPwd2" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/addbottom"
+        app:layout_constraintEnd_toEndOf="@+id/fieldalignmentend"
+        app:layout_constraintStart_toStartOf="@+id/fieldalignmentstart"
+        app:layout_constraintTop_toTopOf="@id/addtop"
+        tools:layout_editor_absoluteY="269dp" />
 
     <View
         android:id="@+id/divider"
@@ -123,48 +150,202 @@
 
     <TextView
         android:id="@+id/tvEmail"
-        android:layout_width="126dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:text="Email:"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="44dp"
+        android:fontFamily="@font/outfitmedium"
+        android:text=" Email :"
         android:textAlignment="viewEnd"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLName" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/emailbottom"
+
+        app:layout_constraintEnd_toEndOf="@+id/fieldalignmentend"
+        app:layout_constraintStart_toStartOf="@+id/fieldalignmentstart"
+        app:layout_constraintTop_toTopOf="@id/emailtop"
+        tools:layout_editor_absoluteY="106dp" />
 
     <EditText
         android:id="@+id/tePwd"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         android:textColorHint="#AAABAE"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/tvPwd"
-        app:layout_constraintTop_toBottomOf="@+id/teEmail" />
+        app:layout_constraintBottom_toTopOf="@id/passbottom"
+
+        app:layout_constraintEnd_toStartOf="@+id/fieldend"
+        app:layout_constraintStart_toEndOf="@+id/fieldend"
+        app:layout_constraintStart_toStartOf="@+id/fieldstart"
+        app:layout_constraintTop_toTopOf="@id/passtop"
+        tools:layout_editor_absoluteY="145dp" />
 
     <TextView
         android:id="@+id/tvPwd2"
-        android:layout_width="126dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        android:text="Retype Password :"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/outfitmedium"
+        android:text="Retype \nPassword  :"
         android:textAlignment="viewEnd"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPwd" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/retypebottom"
+        app:layout_constraintEnd_toEndOf="@+id/fieldalignmentend"
+        app:layout_constraintStart_toStartOf="@+id/fieldalignmentstart"
+        app:layout_constraintTop_toTopOf="@id/retypetop"
+        tools:layout_editor_absoluteY="192dp" />
 
     <TextView
         android:id="@+id/tvLName"
-        android:layout_width="126dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/outfitmedium"
         android:text="Last Name :"
         android:textAlignment="viewEnd"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFName" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/lastnamebottom"
+
+        app:layout_constraintStart_toEndOf="@+id/fieldalignmentstart"
+        app:layout_constraintEnd_toStartOf="@+id/fieldalignmentend"
+        app:layout_constraintTop_toTopOf="@id/lastnametop"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="71dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fieldalignmentend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.37" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fieldalignmentstart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.097" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fieldstart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fieldend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addstart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/firstnametop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/firstnamebottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/lastnametop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.09" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/lastnamebottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/emailtop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.14" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/emailbottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.19" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/passtop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.19" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/passbottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/retypetop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/retypebottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.31" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addtop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addbottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.36" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addfieldtop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.36" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/addfieldbottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
