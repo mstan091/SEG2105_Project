@@ -246,7 +246,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     }
 
     private void insertAdmin() {
-        MealerUserAdmin adminUser = new MealerUserAdmin("Admin", "Mealer", "admin@mealer.com", "admin", "1 admin street mealer city");
+        MealerUserAdmin adminUser = new MealerUserAdmin("Admin", "Mealer", "admin@gmail.com", "admin", "1 admin street mealer city");
         db.addAdmin(adminUser);
     }
 

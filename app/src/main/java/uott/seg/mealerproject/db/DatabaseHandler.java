@@ -120,8 +120,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // Create order table
         String CREATE_ORDER_TABLE = "CREATE TABLE " + TABLE_ORDER + "("
                 + COOK_EMAIL + " TEXT," + CLIENT_EMAIL + " TEXT," + MEAL_NAME + " TEXT," + MEAL_TYPE + " TEXT," + CUISINE_TYPE + " TEXT,"
-                + STATUS + " TINYINT," + PICKUP_TIME + " DATE," + INS_DATE + " DATE,"
-                + RATING + " REAL," + USER_COMPL + " TEXT" + ")";
+                + STATUS + " TINYINT," + PICKUP_TIME + " DATE," + INS_DATE + " DATE," + RATING + " REAL," + USER_COMPL + " TEXT" + ")";
 
         db.execSQL(CREATE_ORDER_TABLE);
 

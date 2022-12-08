@@ -149,7 +149,7 @@ public class MyOrderViewAdapter extends SimpleAdapter implements View.OnClickLis
                     db.setCookRating(cookEmail, newRating);
 
                     //AICI
-                    db.setMyOrderRating(rowID,newRating);
+                    db.setMyOrderRating(rowID,rating);
 
                     btnRate.setText("Submitted");
                     btnRate.setEnabled(false);
